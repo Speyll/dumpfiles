@@ -4,7 +4,14 @@
 *.italicFont: xft:cherry:style=Regular:size=11
 *.boldItalicFont: xft:cherry:style=Regular:size=11
 
+Xft.hinting: true
+Xft.rgba: false
+Xft.autohint: false
+Xft.hintstyle: hintmedium
+Xft.lcdfilter: lcddefault
+
 # URxvt settings
+URxvt.termName: rxvt-unicode-256color
 URxvt.scrollBar: false
 URxvt.scrollbar_right: false
 URxvt.transparent: true

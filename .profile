@@ -17,5 +17,5 @@ export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 
 
-# Start graphical server if i3 not already running.
+# Start graphical server if berry not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x berrywm >/dev/null && exec startx

@@ -41,10 +41,10 @@ super + shift +  {Left, Down, Up, Right}
     berryc window_resize {-50 0, 0 50, 0 -50, 50 0}
 
 super + {ampersand,eacute,quotedbl}
-    berryc switch_workspace {0-2}
+    berryc switch_workspace {1-3}
 
 super + {_,shift + }{ampersand,eacute,quotedbl}
-    berryc send_to_workspace {0-2}
+    berryc send_to_workspace {1-3}
 
 super + m
     berryc window_monocle

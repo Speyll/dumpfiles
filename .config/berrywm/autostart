@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Wallpaper settings
-hsetroot --fill '/home/lyes/Images/Wallpapers/Wallpaper.jpg' &
+hsetroot -fill ~/Images/Wallpapers/Wallpaper.jpg &
 
 # Set decoration geometry
 berryc border_width       3
@@ -10,15 +10,15 @@ berryc title_height       0
 berryc top_gap            18
 
 # Set decoration colors
-berryc focus_color         A6BBD9
+berryc focus_color         455173
 berryc unfocus_color       161623
 berryc inner_focus_color   7D97B8
-berryc inner_unfocus_color 455173
-berryc text_focus_color    161623
-berryc text_unfocus_color  9BB3DC
+berryc inner_unfocus_color 7D97B8 
+berryc text_focus_color    9BB3DC 
+berryc text_unfocus_color  A6BBD9
 
 # Other options
 berryc smart_place "true"
 berryc draw_text   "true"
 berryc edge_lock   "true"
-berryc set_font "cherry-10"
+berryc set_font "cherry-11"

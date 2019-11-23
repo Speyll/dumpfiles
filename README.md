@@ -1,2 +1,1 @@
-# void-berrywm
-just my personnal repo of BerryWM and Void Linux
+dump of all my dotfiles managed with gnu stow

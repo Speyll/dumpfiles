@@ -1,0 +1,92 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator / scratchpad / tmux
+super + {Return, shift + Return,  ctrl + Return}
+	{st, st -c scratchpad -g 70x25 -e tmux, st -c tmux -e tmux}
+
+# program launcher / dmenubar
+super + {d,shift + d}
+	{dmenu_run -p ' what program launch ?', dmenubar}
+
+# make sxhkd reload its configuration files:
+super + Escape
+        pkill -USR1 -x sxhkd
+
+# browser (if both are installed choose one)
+super + shift + b
+	firefox | tabbed -c surf -e
+
+# file manager
+super + shift + p
+	st -c nnn -e nnn
+
+# lemonbar
+super + shift + r
+	pkill lemonbar | pkill sleep | bar
+
+# script launcher and shutdown menu
+super + {shift + s, ctrl + s}
+	{scriptlaunch, dmenuout}
+
+#
+# Special hotkeys
+#
+
+# screenshot key (change the directory to what you want)
+Print
+	scrot ~/Images/Screenshots/%b%d::%H%M%S.png
+
+# multimedia keys
+XF86AudioRaiseVolume
+	amixer -q set Master 5%+ unmute
+
+XF86AudioLowerVolume
+	amixer -q set Master 5%- unmute
+
+XF86AudioMute
+amixer -q set Master mute
+
+#
+# berrywm hotkeys
+#
+
+super + {Left, Down, Up, Right}
+    berryc window_move {-50 0, 0 50, 0 -50, 50 0}
+
+super + shift +  {Left, Down, Up, Right}
+    berryc window_resize {-50 0, 0 50, 0 -50, 50 0}
+
+super + {ampersand,eacute,quotedbl}
+    berryc switch_workspace {1-3}
+
+super + {_,shift + }{ampersand,eacute,quotedbl}
+    berryc send_to_workspace {1-3}
+
+super + m
+    berryc window_monocle
+
+super + f
+    berryc fullscreen
+
+super +  p
+    berryc snap_right
+
+super + o 
+    berryc snap_left
+
+super + n
+    berryc toggle_decorations
+
+super + Tab
+    berryc cycle_focus
+
+super + shift + a
+    berryc window_close
+
+super + c
+    berryc window_center
+
+~button1
+berryc pointer_focus

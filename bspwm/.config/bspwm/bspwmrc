@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/sh
 
 #  workspaces setup
 bspc monitor -d I II III
@@ -20,7 +20,7 @@ compton &
 amixer -q set Master 100% &
 xbacklight -set 60 &
 pkill redshift
-redshift -x && redshift -l 36.73225:3.08746
+redshift -x && redshift -l 36.73225:3.08746 &
 
 # Border gaps settings
 bspc config border_width         2
@@ -31,7 +31,7 @@ bspc config left_padding         15
 bspc config right_padding        15
 
 # Workspaces settings
-bspc rule -a 'firefox' desktop='^1'
+bspc rule -a 'Firefox' desktop='^1'
 bspc rule -a 'mpv' desktop='^3' center=on state=pseudo_tiled
 bspc rule -a 'nnn' center=on state=pseudo_tiled
 bspc rule -a 'scratchpad' sticky=on center=on state=floating

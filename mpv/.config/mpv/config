@@ -1,6 +1,6 @@
 # general
 hwdec=vdpau
-# hwdec=nvdec
+#hwdec=nvdec
 hwdec-codecs=all
 deband=no
 interpolation=no

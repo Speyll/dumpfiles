@@ -4,20 +4,25 @@
 pkill lemonbar | pkill bar | pkill sleep | pkill xtitle
 #bar &
 
-# Wallpaper setting
+## Wallpaper setting
+pkill xwinwrap | pkill hsetroot | pkill setroot | pkill sxiv
+
+# Image still
 hsetroot -fill ~/Images/Wallpapers/Wallpaper.jpg &
-#xwinwrap -ov -ni -fs -- mpv -vo x11 -wid WID --keepaspect=no --pause=no --loop ~/Images/Wallpapers/Wallpaper.gif &
-#xwinwrap -ov -ni -fs -- sxiv -a -e WID -f -b -g 1366x768  ~/Images/Wallpapers/29.gif &
+#hsetroot -tile ~/Images/Wallpapers/Tile.png &
+#setroot -z ~/Images/Wallpapers/Wallpaper.jpg &
+
+# Animated background
+#xwinwrap -ov -ni -fs -- mpv -vo x11 -wid WID --keepaspect=no --pause=no --loop ~/Images/Wallpapers/*.gif &
+#xwinwrap -ov -ni -fs -- sxiv -a -e WID -f -b -g 1366x768  ~/Images/Wallpapers/*.gif &
 
 # Compositor
 pkill compton
-compton &
+compton -b &
 
-# default prefered settings
+# Default prefered settings
 amixer -q set Master 100% &
 xbacklight -set 60 &
-killall redshift
-redshift -x | redshift -l 36.73225:3.08746 &
 
 # Set decoration geometry
 berryc border_width       3
@@ -37,4 +42,4 @@ berryc text_unfocus_color  A6BBD9
 berryc smart_place "true"
 berryc draw_text   "true"
 berryc edge_lock   "true"
-berryc set_font "cherry-11"
+berryc set_font "terminus-11"

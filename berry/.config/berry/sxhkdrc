@@ -16,7 +16,7 @@ super + Escape
 
 # browser (if both are installed choose one)
 super + shift + b
-	firefox | tabbed -c surf -e
+	firefox #| tabbed -c surf -e
 
 # file manager
 super + shift + p

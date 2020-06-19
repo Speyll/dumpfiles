@@ -40,13 +40,12 @@ static const uint8_t borders[] = {4,7,4,4};
 #define LOOK_INTO "WM_NAME"
 static const char *ignore_names[] = {"bar", "xclock"};
 ///--Menus and Programs---///
-static const char *menucmd[] = { "dmenu_run", "-p", " what program launch ?", NULL };
-static const char *tmuxcmd[] = { "st", "-e", "tmux", NULL };
+static const char *menucmd[] = { "dmenu_run", "-p", "Choose a program:", NULL };
+static const char *tmuxcmd[] = { "st", "-c", "tmux", "-e", "tmux", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browser[]  = { "firefox", NULL };
-static const char *file[]  = { "st", "-e", "nnn", NULL };
+static const char *file[]  = { "st", "-c", "nnn", "-e", "nnn", NULL };
 static const char *scriptlaunch[] = { "scriptlaunch", NULL };
-static const char *dmenuout[] = { "dmenuout", NULL };
 static const char *scrot[] = { "scrot", "~/Images/Screenshots/%b%d::%H%M%S.png", NULL };
 
 ///--Custom foo---///
@@ -171,13 +170,11 @@ static key keys[] = {
 
     // Start programs
     {  MOD ,              XK_d,          start,             {.com = menucmd}},
-    {  MOD |SHIFT,        XK_d,          start,             {.com = dmenubar }},
     {  MOD ,              XK_Return,     start,             {.com = termcmd}},
     {  MOD |SHIFT,        XK_Return,     start,             {.com = tmuxcmd }},
     {  MOD |SHIFT,        XK_b,          start,             {.com = browser }},
     {  MOD |SHIFT,        XK_p,          start,             {.com = file }},
     {  MOD |SHIFT,        XK_s,          start,             {.com = scriptlaunch }},
-    {  MOD |CONTROL,      XK_s,          start,             {.com = dmenuout }},
     {  MOD,               XK_Print,      start,             {.com = scrot }},
 
     // Exit or restart 2bwm

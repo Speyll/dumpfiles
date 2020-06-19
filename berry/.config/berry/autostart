@@ -1,24 +1,25 @@
 #!/bin/sh
 
-# Lemonbar
-pkill lemonbar | pkill bar | pkill sleep | pkill xtitle
-#bar &
+# Make the mouse visible
+xsetroot -cursor_name left_ptr
 
 ## Wallpaper setting
-pkill xwinwrap | pkill hsetroot | pkill setroot | pkill sxiv
+pkill xwinwrap | pkill hsetroot | pkill sxiv
 
-# Image still
-hsetroot -fill ~/Images/Wallpapers/Wallpaper.jpg &
-#hsetroot -tile ~/Images/Wallpapers/Tile.png &
-#setroot -z ~/Images/Wallpapers/Wallpaper.jpg &
+# Image
+hsetroot -cover ~/Images/Walls/1.jpg
 
 # Animated background
 #xwinwrap -ov -ni -fs -- mpv -vo x11 -wid WID --keepaspect=no --pause=no --loop ~/Images/Wallpapers/*.gif &
 #xwinwrap -ov -ni -fs -- sxiv -a -e WID -f -b -g 1366x768  ~/Images/Wallpapers/*.gif &
 
+# Polybar
+pkill polybar
+polybar example & disown
+
 # Compositor
-pkill compton
-compton -b &
+pkill picom
+#picom -b &
 
 # Default prefered settings
 amixer -q set Master 100% &
@@ -28,7 +29,7 @@ xbacklight -set 60 &
 berryc border_width       3
 berryc inner_border_width 3
 berryc title_height       0
-berryc top_gap            18
+berryc top_gap            0
 
 # Set decoration colors
 berryc focus_color         455173
@@ -42,4 +43,4 @@ berryc text_unfocus_color  A6BBD9
 berryc smart_place "true"
 berryc draw_text   "true"
 berryc edge_lock   "true"
-berryc set_font "terminus-11"
+berryc set_font "kakwafont-10"

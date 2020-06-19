@@ -2,17 +2,17 @@
 # wm independent hotkeys
 #
 
-# terminal emulator / scratchpad / tmux
-super + {Return, shift + Return,  ctrl + Return}
-	{st, st -c scratchpad -g 70x25 -e tmux, st -c tmux -e tmux}
-
-# program launcher / dmenubar
-super + {d,shift + d}
-	{dmenu_run -p ' what program launch ?', dmenubar}
-
 # make sxhkd reload its configuration files:
 super + Escape
-        pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd
+
+# terminal emulator / scratchpad / tmux
+super + {Return, shift + Return,  ctrl + Return}
+	{urxvt, urxvt -name scratchpad -g 70x25 -e tmux, urxvt -name tmux -e tmux}
+
+# program launcher / dmenubar
+super + d
+	{dmenu_run -p 'Choose a program:'}
 
 # browser (if both are installed choose one)
 super + shift + b
@@ -20,7 +20,7 @@ super + shift + b
 
 # file manager
 super + shift + p
-	st -c nnn -e nnn
+	urxvt -name nnn -e nnn
 
 # lemonbar
 super + shift + r
@@ -28,7 +28,7 @@ super + shift + r
 
 # script launcher and shutdown menu
 super + {shift + s, ctrl + s}
-	{scriptlaunch, dmenuout}
+	{dmenulaunch, dmenuout}
 
 #
 # Special hotkeys
@@ -47,6 +47,7 @@ XF86AudioLowerVolume
 
 XF86AudioMute
 amixer -q set Master mute
+
 
 #
 # berrywm hotkeys

@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font for window titles.
-font pango:cherry 9
+font pango:kakwafont 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -14,38 +14,33 @@ bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+a kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -p " what program launch ?"
+bindsym $mod+d exec dmenu_run -p "Choose a program:"
 
 # Wallpaper
-exec_always --no-startup-id hsetroot -fill ~/Images/Wallpapers/Wallpaper.jpg &
-#exec_always --no-startup-id xwinwrap -ov -ni -fs -- mpv -vo x11 -wid WID --keepaspect=no --pause=no --loop ~/Images/Wallpapers/Wallpaper.gif &
-#exec_always --no-startup-id xwinwrap -ov -ni -fs -- sxiv -a -e WID -f -b -g 1366x768  ~/Images/Wallpapers/29.gif &
+exec_always --no-startup-id hsetroot -cover ~/Images/Walls/1.jpg
+#exec_always --no-startup-id xwinwrap -ov -ni -fs -- mpv -vo x11 -wid WID --keepaspect=no --pause=no --loop ~/Images/Walls/1.gif &
+#exec_always --no-startup-id xwinwrap -ov -ni -fs -- sxiv -a -e WID -f -b -g 1366x768  ~/Images/Walls/1.gif &
 
 # Compositor
-exec_always pkill compton
-exec_always compton &
+exec_always pkill picom
+exec_always picom &
 
 # Autostart
 exec_always amixer -q set Matser 100% &
 exec_always xbacklight -set 60 &
-exec_always killall redshift
-exec_always redshift -x | exec_always redshift -l 36.73225:3.08746 &
 
 # i3-Gaps
 for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 15
+gaps inner 4
+gaps outer 2
 smart_gaps on
 smart_borders on
 
 # Keybindings
-bindsym $mod+Shift+Return exec "st -c scratchpad -g 70x25 -e tmux"
-bindsym $mod+Control+Return exec "st -e tmux"
+bindsym $mod+Control+Return exec "st -c tmux -e tmux"
 bindsym $mod+Shift+b exec "firefox"
-bindsym $mod+Shift+p exec "st-e nnn"
+bindsym $mod+Shift+p exec "st -c nnn -e nnn"
 bindsym $mod+Shift+s exec "scriptlaunch"
-bindsym $mod+Control+s exec "dmenuout"
-bindsym $mod+Shift+d exec "dmenubar"
 bindsym Print exec "scrot ~/Images/Screenshots/%b%d::%H%M%S.png"
 
 # Move class to workspaces
@@ -128,9 +123,9 @@ bindsym $mod+q focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws0 "1"
-set $ws1 "2"
-set $ws2 "3"
+set $ws0 "I"
+set $ws1 "II"
+set $ws2 "III"
 
 # Multi monitor setup (delete this if you have only one monitor/edit it to your needs)
 workspace 0 output primary
